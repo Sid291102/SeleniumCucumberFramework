@@ -63,7 +63,7 @@ Feature: Login and Logout Functionality
     And I click on the logout link
     Then I should be redirected to the login page
 
-Feature:Checkout
+Feature:Checkout.feature
 
 Feature: Checkout Process
 
