@@ -51,11 +51,31 @@ This framework is designed to automate web applications using **Behavior Driven 
 ## 📄 Sample Feature File
 
 ```gherkin
-Feature: SauceDemo Login
+Feature:  Login.feature
 
-Scenario: Valid login with correct credentials
-  Given User opens SauceDemo website
-  When User enters valid username and password
-  Then User should be redirected to homepage
+Feature: Login and Logout Functionality
+
+  Scenario: Successful logout from products page
+    Given I am on the SauceDemo login page
+    When I enter username "standard_user" and password "secret_sauce"
+    And I click on the login button
+    When I click on the menu button
+    And I click on the logout link
+    Then I should be redirected to the login page
+
+Feature:Checkout
+
+Feature: Checkout Process
+
+  Scenario: User can purchase a backpack
+    Given I am on the SauceDemo login page
+    When I enter username "standard_user" and password "secret_sauce"
+    And I click on the login button
+    When I add the "Sauce Labs Backpack" to the cart
+    And I click on the shopping cart icon
+    And I click on the checkout button
+    When I enter shipping information "John", "Doe", and "12345"
+    And I finish the order
+    Then I should see the order confirmation message "Thank you for your order!"
 
 
